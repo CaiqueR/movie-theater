@@ -1,0 +1,48 @@
+.discover {
+  padding: 12px;
+}
+
+.discover h1 {
+  padding: 12px;
+}
+
+.movie-list {
+  display: flex;
+  overflow: auto;
+  gap: 24px;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  flex: 0 0 215px;
+}
+
+.movie-image {
+  width: 215px;
+  object-fit: cover;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 5px 10px 15px 0px rgb(0, 0, 0, 0.2);
+}
+
+.movie-title {
+  margin-top: 24px;
+  font-weight: bold;
+}
+
+.movie-section {
+  color: #b2b1b4;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.movie-popularity {
+  margin-left: 12px;
+}
+
+.movie-details {
+  color: #b2b1b4;
+  font-size: 12px;
+}
