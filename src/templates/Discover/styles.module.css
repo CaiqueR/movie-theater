@@ -12,6 +12,20 @@
   gap: 24px;
 }
 
+.movie-list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.movie-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .movie {
   display: flex;
   flex-direction: column;

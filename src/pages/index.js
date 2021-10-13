@@ -6,7 +6,7 @@ import api from "../utils/api";
 export default function Home(props) {
   return (
     <SearchProvider>
-      <SearchBar />
+      <SearchBar {...props} />
       <Discover title="Top popular" {...props} />
     </SearchProvider>
   );

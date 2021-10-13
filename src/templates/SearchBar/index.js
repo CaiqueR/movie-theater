@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { StarRating } from "../../components/StarRating";
 import { useSearch } from "../../context/SearchContext";
 import api from "../../utils/api";
 import styles from "./styles.module.css";
 
-function SearchBar() {
-  const { search, setSearch, setResults } = useSearch();
+function SearchBar({ data }) {
+  const { search, setSearch, setResults, rating, setRating } = useSearch();
   const [searchInput, setSearchInput] = useState("");
 
   async function handleSubmit(event) {
@@ -13,6 +14,18 @@ function SearchBar() {
     const response = await api("/search/movie", {
       query: event.target.search.value,
     });
+
+    // const responseFiltered = {
+    //   ...response,
+    //   results: response.results.filter((result) => {
+    //     if (rating === 0) {
+    //       return true;
+    //     }
+    //     const max = rating * 2;
+    //     const min = max - 2;
+    //     return result.vote_average >= min && result.vote_average <= max;
+    //   }),
+    // };
 
     setResults(response);
   }
@@ -49,6 +62,7 @@ function SearchBar() {
           {search && <span onClick={handleClear}>&#10006;</span>}
           <button>Search</button>
         </div>
+        <StarRating name="rating" value={rating} setValue={setRating} />
       </form>
     </div>
   );
