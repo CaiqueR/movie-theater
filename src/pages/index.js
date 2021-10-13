@@ -1,8 +1,15 @@
+import { SearchProvider } from "../context/SearchContext";
 import Discover from "../templates/Discover";
+import SearchBar from "../templates/SearchBar";
 import api from "../utils/api";
 
 export default function Home(props) {
-  return <Discover {...props} />;
+  return (
+    <SearchProvider>
+      <SearchBar />
+      <Discover title="Top popular" {...props} />
+    </SearchProvider>
+  );
 }
 
 export async function getStaticProps() {

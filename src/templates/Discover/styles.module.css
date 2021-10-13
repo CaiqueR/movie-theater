@@ -15,16 +15,52 @@
 .movie {
   display: flex;
   flex-direction: column;
-  height: 400px;
   flex: 0 0 215px;
+}
+
+.movie-image-wrapper {
+  width: 215px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 12px;
+  box-shadow: 5px 10px 15px 0px rgb(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.movie-image-wrapper p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  color: #ffffff;
+  max-height: 80%;
+  width: 90%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.movie-image-wrapper:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+
+.movie-image-wrapper:hover .movie-image {
+  transform: scale(1.2);
+  filter: blur(4px);
 }
 
 .movie-image {
   width: 215px;
-  object-fit: cover;
   height: 300px;
-  border-radius: 12px;
-  box-shadow: 5px 10px 15px 0px rgb(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 .movie-title {
